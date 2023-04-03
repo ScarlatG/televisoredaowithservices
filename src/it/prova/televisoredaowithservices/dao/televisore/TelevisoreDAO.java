@@ -1,18 +1,16 @@
 package it.prova.televisoredaowithservices.dao.televisore;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 
 import it.prova.televisoredaowithservices.dao.IBaseDAO;
 import it.prova.televisoredaowithservices.model.Televisore;
 
 public interface TelevisoreDAO extends IBaseDAO<Televisore> {
+	List<Televisore> findAllByProdottiTra(Date data1, Date data2) throws Exception;
 
-	public Televisore cercaTelevisorePiuGrande() throws Exception;
+	Televisore findTelevisorePiuGrande() throws Exception;
 
-	public List<Televisore> trovaTelevisoriProdottiInUnDatoIntervalloDiDate(LocalDate dataConfronto);
-
-	public List<Televisore> trovaLaListaDiMarcheDeiTelevisoriProdottiNegliUltimiSeiMesi(String marcaInput,
-			LocalDate dataInput);
+	List<Televisore> findAllMarcheProdottiUltimiSeiMesi() throws Exception;
 
 }

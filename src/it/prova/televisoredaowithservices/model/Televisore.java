@@ -1,44 +1,27 @@
 package it.prova.televisoredaowithservices.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Televisore {
-
 	private Long id;
 	private String marca;
 	private String modello;
 	private int pollici;
-	private LocalDate dataProduzione;
+	private Date dataProduzione;
 
+	// costruttore default
 	public Televisore() {
-
 	}
 
-	public Televisore(String marca) {
-		super();
-		this.marca = marca;
-	}
-
-	public Televisore(String marca, String modello) {
-		super();
-		this.marca = marca;
-		this.modello = modello;
-	}
-
-	public Televisore(String marca, String modello, int pollici) {
-		super();
-		this.marca = marca;
-		this.modello = modello;
-		this.pollici = pollici;
-	}
-
-	public Televisore(String marca, String modello, int pollici, LocalDate dataProduzione) {
+	// costruttore
+	public Televisore(String marca, String modello, int pollici, Date dataProduzione) {
 		super();
 		this.marca = marca;
 		this.modello = modello;
 		this.pollici = pollici;
 		this.dataProduzione = dataProduzione;
 	}
+	// metodi get e set
 
 	public Long getId() {
 		return id;
@@ -72,21 +55,18 @@ public class Televisore {
 		this.pollici = pollici;
 	}
 
-	public LocalDate getDataProduzione() {
+	public Date getDataProduzione() {
 		return dataProduzione;
 	}
 
-	public void setDataProduzione(LocalDate dataProduzione) {
+	public void setDataProduzione(Date dataProduzione) {
 		this.dataProduzione = dataProduzione;
 	}
 
+	// toString
 	@Override
 	public String toString() {
 		return "Televisore [id=" + id + ", marca=" + marca + ", modello=" + modello + ", pollici=" + pollici
-				+ ", dataProduzione=" + dataProduzione + ", getId()=" + getId() + ", getMarca()=" + getMarca()
-				+ ", getModello()=" + getModello() + ", getPollici()=" + getPollici() + ", getDataProduzione()="
-				+ getDataProduzione() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+				+ ", dataProduzione=" + dataProduzione + "]";
 	}
-
 }
